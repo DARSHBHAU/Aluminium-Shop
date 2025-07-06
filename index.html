@@ -3,84 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Radhe Radhe Aluminium Fabrication</title>
+  <title>Radhe-Radhe Aluminium Fabrication</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body id="page">
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo"><a href="index.html">Radhe-Radhe Aluminium Fabrication</a></div>
-<label class="switch">
-  <input type="checkbox" class="input" id="themeToggle">
-  <span class="slider">
-    <span class="icon sun">☀️</span>
-    <span class="icon moon">🌙</span>
-  </span>
-</label>
-
+    <h1 class="logo">Radhe–Radhe Aluminium Fabrication</h1>
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider">
+        <span class="icon moon">🌙</span>
+        <span class="icon sun">☀️</span>
+      </span>
+    </label>
     <div class="menu-icon" id="menu-toggle">☰</div>
     <nav class="nav-links" id="nav-links">
-      <a href="#features">Features</a>
+      <a href="index.html">Home</a>
+      <a href="orders.html">Order</a>
       <a href="contact.html">Contact</a>
-      <a href="orders.html">Collection</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
+  <main class="hero">
     <h1>Welcome Costumer</h1>
     <p>Best Work Of Aluminium Made Beautifully By Our Artisans</p>
-    <a href="#features" class="btn">Explore</a>
-  </section>
+    <a href="#quality" class="btn">Explore</a>
+  </main>
 
-  <!-- Features Section -->
-  <section class="cards" id="features">
-    <div class="card animate">
-      <h3>Quality</h3>
+  <section class="cards">
+    <div class="card animate" id="quality">
+      <h2>Quality</h2>
       <p>Delivering high-performance aluminium products with consistent precision, durability, and industry-leading standards.</p>
     </div>
-    <div class="card animate">
-      <h3>Experience</h3>
-      <p>Backed by decades of expertise in aluminium manufacturing, ensuring trusted solutions and innovative applications.</p>
-    </div>
-    <div class="card animate">
-      <h3>Reasonable Price</h3>
-      <p>Offering premium aluminium solutions at competitive prices without compromising on quality.</p>
-    </div>
   </section>
 
-  <section class="gallery">
-  <div class="gallery-heading"><h2 id="works-header">Our Works</h2></div>
-
-  <div class="box1">
-    <div class="photo1">
-      <h3 style="margin-bottom: 1rem;">Main Gate Design</h3>
-      <img id="photo" src="#" alt="Main Gate">
-    </div>
-  </div>
-
-  <div class="box2">
-    <div class="photo2">
-      <h3 style="margin-bottom: 1rem;">Window Frame</h3>
-      <img id="photo" src="#" alt="Window Frame">
-    </div>
-  </div>
-
-  <div class="box3">
-    <div class="photo3">
-      <h3 style="margin-bottom: 1rem;">Sliding Partition</h3>
-      <img id="photo" src="#" alt="Sliding Partition">
-    </div>
-  </div>
-</section>
-
-  <!-- Footer -->
   <footer class="footer">
-    &copy; 2025 MySite. All rights reserved.
+    &copy; 2025 Radhe–Radhe Aluminium Fabrication
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Toggle Menu
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("open");
+    });
+
+    // Dark mode toggle
+    const toggle = document.getElementById("themeToggle");
+    const body = document.getElementById("page");
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-theme');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
